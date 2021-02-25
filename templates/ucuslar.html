@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Anasayfa
+{%endblock %}
+
+{%block body%}
+
+
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Kalkış Şehri</th scope="col">
+        <th scope="col">Varış Şehri</th scope="col">
+        <th scope="col">Şirket</th scope="col">
+        <th scope="col">Uçak</th scope="col">
+        <th scope="col">Tarih</th scope="col">
+        <th scope="col">Saat</th scope="col">
+        <th scope="col">Fiyat</th scope="col">
+        <th scope="col"></th scope="col">
+        <th scope="col"></th scope="col">
+      </tr>
+    </thead>
+    <tbody>
+      {%for ucus in ucuslar%}
+      <tr>
+        <td style="color: white;"> {{ ucuslar[ucus]["kalkisSehir"] }}</td>
+        <td style="color: white;"> {{ ucuslar[ucus]["varisSehir"] }}</td>
+        <td style="color: white;"> {{ ucuslar[ucus]["sirket"] }}</td>
+        <td style="color: white;"> {{ ucuslar[ucus]["ucak"] }}</td>
+        <td style="color: white;"> {{ ucuslar[ucus]["ucusTarih"] }}</td>
+        <td style="color: white;"> {{ ucuslar[ucus]["ucusSaat"] }}</td>
+        <td style="color: white;"> {{ ucuslar[ucus]["fiyat"] }}</td>
+        <td style="color: white;"><a href="{{ url_for('ucus_duzenle',ucus_id=ucus)}}">    <input  style="background-color: burlywood; border-radius: 10px;"  type = "submit" value = "Düzenle" /></a></td>
+        <td style="color: white;"><a href="{{ url_for('ucus_sil',ucus_id=ucus)}}">    <input  style="background-color: burlywood; border-radius: 10px;"  type = "submit" value = "    Sil    " /></a></td>
+      </tr>
+      {%endfor%}
+    </table>
+
+
+
+{%endblock %}

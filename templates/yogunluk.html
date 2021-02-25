@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Yoğunluk Bilgisi
+{%endblock %}
+
+{%block body%}
+<center>
+    <br><br><br><br>
+  <h2  style=" color:moccasin; font-family: initial; font-weight: bold;">Yoğunluk</h2><br>
+  <div class="container" style="padding-left: 250px; padding-right: 250px;">
+<form action = "{{ url_for('yogunluk')}}", method = "POST">
+    
+    <div class="form-group">
+                        
+        <label style="color: orange; font-weight: bold;"> Tarih Aralığı Başlangıcı</label>
+        <input required class="form-control form-control-xs" placeholder="Başlangıç Tarihi" type = "date" name = "aralik1" />
+      
+      </div><br>
+      <div class="form-group">
+                        
+        <label style="color: orange; font-weight: bold;"> Tarih Aralığı Bitişi</label>
+        <input required class="form-control form-control-xs" placeholder="Bitiş Tarihi Seçiniz" type = "date" name = "aralik2" />
+      
+      </div><br>
+
+    <input   style="background-color: orange; border-radius: 10px;"  type="submit" value="        Sorgula       ">
+ </form>
+</center>
+{%endblock %}

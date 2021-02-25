@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Uçuş Ekleme Sayfası
+{%endblock %}
+
+{%block body%}
+<center>
+  <br><br><br><br>
+<h2  style=" color:moccasin; font-family: initial; font-weight: bold;">Uçuş Ekle</h2><br>
+<div class="container" style="padding-left: 250px; padding-right: 250px;">
+<form action = "{{ url_for('ucus_ekle')}}", method = "POST">
+  
+    <center>
+  <label style="color: orange; font-weight: bold;"> Eklemek İstediğiniz Uçuşu Seçiniz</label>
+    <select class="form-control" name="ucus">
+        {% for fiyat in fiyatlar %}
+        <option value="{{fiyat}}">Kalkış Şehri - {{fiyatlar[fiyat]["kalkisSehri"]}} ----->  Varış Şehri - {{fiyatlar[fiyat]["varisSehri"]}} ***** Şirket Adı {{fiyatlar[fiyat]["ucusSirketi"]}} ***** Uçak Modeli {{fiyatlar[fiyat]["ucusUcakModeli"] }} ***** Uçus Fiyatı {{fiyatlar[fiyat]["ucusFiyati"]}} </option>
+        {% endfor %}
+      </select><br><br>
+    </center>
+
+    <div class="form-group">
+                        
+      <label style="color: orange; font-weight: bold;"> Uçuş Tarihi</label>
+      <input required class="form-control form-control-xs" placeholder="Uçuş Tarihi" type = "date" name = "ucusTarihi" />
+    
+    </div><br>
+    <div class="form-group">
+                        
+      <label style="color: orange; font-weight: bold;"> Uçuş Saati</label>
+      <input required class="form-control form-control-xs" placeholder="Uçuş Saati" type = "time" name = "ucusSaati" />
+    
+    </div><br>
+
+      <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "            Ekle           " /><br><br>
+ </form>
+</center>
+{%endblock %}

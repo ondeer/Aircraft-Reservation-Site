@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        UÇAK BİLET SİTESİ
+{%endblock %}
+
+{%block body%}
+    
+    <div  class="anasayfa" style="margin-top: -70px ;">
+    <section  id = "banner"  style="background-image: url('../static/img/manzarafull.jpg'); background-repeat: no-repeat; background-size: 100%; " >
+        
+        <div class = "container-fluid">
+            <div class="row">
+                <div class ="col-md-12">
+                    <p class = "promo-title"><Datag  style="color: rgb(201, 130, 0);" > ÖZGÜRCE UÇUN </Datag></p>
+                    <p  class="fnt">Hayallerinizi Keşfetmeye Başlayınız</p>
+                </div> 
+                    
+                    <div class="container pb-3" id="homepage">
+                        <br><br>
+                        <div id="oneway">
+                            <form action="{{url_for('anasayfa')}}" method="POST">
+                                <p style="color: orange;"> Nereden </p>
+                                <center>
+                                <select class="col-md-6 form-control" name="secilenKalkisSehir">
+                                    {% for sehir in sehirler %}
+                                    <option value="{{sehir.sehirAd}}">{{sehir.sehirAd}}</option>
+                                    {% endfor %}
+                                  </select>
+                                </center><br><br>
+                                  <p style="color: orange;"> Nereye </p>
+                                  <center>
+                                  <select class="col-sm-6 form-control" name="secilenVarisSehir">
+                                    {% for sehir in sehirler %}
+                                    <option value="{{sehir.sehirAd}}">{{sehir.sehirAd}}</option>
+                                    {% endfor %}
+                                  </select>
+                                </center><br><br>
+                              
+                              
+                              
+                                  <center>
+                                    <label style="color:orange;" for="depart">Tarih Giriniz  :</label>
+                                    <input name="secilenTarih" id="datefield" class="col-sm-6 form-control" type="date" placeholder="Tarih Seçin" value="Bir tarih seçin">
+                                  </center>
+                              
+                              
+                              <br>
+                              <div class="row">
+                              
+                              </div> 
+                              <br>
+                              <div class="btn-group btn-group-justified">	
+                                    <div class="btn-group">
+                                        <button type="submit" class="btn btn-success">Seçeneklere Bak</button>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="reset"  class="btn btn-info" value="Reset">İptal Et</button>
+                                    </div>
+                              </div>
+                            </form>
+                        </div>
+                    
+                    
+                        
+                    
+                        </div>	
+                    
+                </div>
+                
+            
+        </div>
+
+        <img src="../static/img/wave.png">
+    </section>
+        
+     <!-- -------------------------- banner section  ------------>
+
+     <section id ="services">
+            
+         <div class="container ">
+                
+             <h1 class="title text-center">Kaliteli Hizmet ile Sizlerleyiz</h1>
+             <div class="row text-center">
+                 <div class="col-md-4 services">
+                     <img width="250px" height="200px" src = "../static/img/services1.png" class ="sevice-img">
+                     <h4>Geniş Koltuk Aralığı</h4>
+                     <p>Uçaklarımızdaki geniş(90 santimetre) koltuk aralıkları ile rahat ve huzuru bir yolculuk deneyimizi sunuyoruz</p>
+
+                 </div>
+                 <div class="col-md-4 services">
+                        <img width="250px" height="200px" src = "../static/img/services2.png" class ="sevice-img">
+                        <h4>Güleryüzlü Çalışanlar</h4>
+                        <p>Daima isteklerinizle alakadar olan ve huzurlu bir yolculuk deneyimi yaşamanız için güleryüzlerini eksik etmeyen kabin ekibimiz ile sizlerleyiz.</p>
+   
+                    </div>
+                    <div class="col-md-4 services">
+                            <img width="250px" height="200px" src = "../static/img/services2.png" class ="sevice-img">
+                            <h4>Onlarca Ödül</h4>
+                            <p>Şu ana kadar elde etmiş olduğumuz 100'ü geçik ödül ile kaliteli bir yolculuk sunduğumuzu kanıtlamış olmaktayız.</p>
+       
+                    </div>
+             </div>
+         </div>
+     </section>
+    <!-- -------------------------- About Us  ------------>
+      <section id ="about-us">
+        <div class="container">
+            <h1 class="title text-center"> HAKKIMIZDA </h1>
+            <div class="row">
+                <div class="col-md-6 about-us">
+                    <p class="about-title"> Biz farklı yapan ne?</p>
+                    <ul>
+                        <li>Müşteri Memnuniyetini Amaç Edindik</li>
+                        <li>Güvenli Uçuş ve Güvenli Bilet Sistemi</li>
+                        <li>%98 Oranında Memnuniyet</li>
+                        <li>Uçaklarımızın Kalitesi</li>
+                        <li>Daha iyiye olan inancımız</li>
+                    </ul>
+
+                </div>
+            
+                <div class="col-md-6">
+                    <img src="../static/img/manzara.jpg" class="img-fluid pt-5" >
+                </div>
+            </div>
+        </div>
+      </section>
+</body>
+
+</html>
+
+    <!-- -------------------------- Social Media  ------------>
+
+<section id = "social-media">
+    <div class = "container text-center">
+        <p> BİZE SOSYAL MEDYADAN ULAŞIN </p>
+        <div class="social-icons">
+            <a href="#"><img src="../static/img/facebook.png"></a>
+            <a href="#"><img src="../static/img/instagram.png"></a>
+            <a href="#"><img src="../static/img/twitter.png"></a>
+            <a href="#"><img src="../static/img/linkedin.png"></a>
+            <a href="#"><img src="../static/img/whatsapp.png"></a>
+            <a href="#"><img src="../static/img/youtube.png"></a>
+        </div>
+    </div>
+</section>
+    <!-- -------------------------- footer Media  ------------>
+    
+<section id ="footer">
+        <img src="../static/img/wave-large-reversed.png">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-box">
+                <div class="text-center">
+                <img src = "../static/img/logoson.png" class="img-fluid text-center" >
+            </div>
+                <p>Güvenli bir şekilde bilet almanız konusunda ve tüm uçuş seçeneklerini en güncel şekilde sizlere sunmak konusunda daima sizin yanınızda olacağız</p>
+
+            </div>
+            <div class="col-md-4 footer-box">
+                <p><b>BİZİMLE İLETİŞİM KURUN</b></p>
+                <p><i class="fa fa-map-marker"></i>İstanbul Bayrampaşa,Ceviz Caddesi</p>
+                <p><i class="fa fa-phone"></i>0(216)-452-4058</p>
+                <p><i class="fa fa-envelope"></i>futureairlinese@gmail.com</p>
+                
+            </div>
+            <div class="col-md-4 footer-box text-center ">
+                      <p class="mr-5"><b>Yeniliklerimizden Haberdar Olun</b></p>
+                    <input type="email" class="form-control" placeholder="E-mailini Gir">
+                    <button type="button" class="btn btn-primary pr-5 mr-5 ">Bize Katıl</button>
+                            
+            </div>
+            </div>
+            
+                    
+                
+        </div>
+    
+    
+</section>
+    </div>
+<script>
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+ if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("datefield").setAttribute("min", today);
+</script>
+{%endblock%}

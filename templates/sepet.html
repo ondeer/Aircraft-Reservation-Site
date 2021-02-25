@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Sepet
+{%endblock %}
+
+{%block body%}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Uçuş ID</th>
+      <th scope="col">Rezervasyon Saati</th>
+      <th scope="col">Bilet Sahibi Adı</th>
+      <th scope="col">Bilet Sahibi Soyadı</th>
+      <th scope="col">Bilet Sahibi Tc</th>
+      <th style="background-color: rgb(156, 142, 116);" scope="col"></th>
+      <th style="background-color: rgb(177, 163, 138);" scope="col"></th>
+      <th style="background-color: rgb(212, 206, 195);" scope="col"></th>
+      
+    </tr>
+    
+  </thead>
+  <tbody>
+  {% for urun in spt %}
+  <form style="background-color: aliceblue;" action = "{{ url_for('rezervasyon_yap')}}", method = "POST"></form>
+  <tr>
+
+      <td style="color: aliceblue;">{{ spt[urun]["ucusId"] }}</td>
+      <td style="color: aliceblue;">{{ spt[urun]["rezervasyonSaati"] }}</td style="color: aliceblue;">
+      <td style="color: aliceblue;">{{ spt[urun]["biletSahibiAd"] }}</td style="color: aliceblue;">
+      <td style="color: aliceblue;">{{ spt[urun]["biletSahibiSoyad"] }}</td style="color: aliceblue;">
+      <td style="color: aliceblue;">{{ spt[urun]["biletSahibiTC"] }}</td style="color: aliceblue;">
+      <td ><a href="{{ url_for('odeme_yap',sepetKey=urun) }}">    <input style=" border-radius: 8px; background-color: yellow;" type="button" value = "Ödeme Yap" /></a></td >
+      <td><a href="{{ url_for('rezervasyon_sil',sepetKey=urun) }}">    <input style=" border-radius: 8px; background-color: yellow;"  type="button" value = "   Sil   " /></a></td>
+      <td><a href="{{ url_for('rezervasyon_guncelle',sepetKey=urun) }}">    <input  style=" border-radius: 8px; background-color: yellow;"     type="button" value = "Düzenle" /></a></td>
+      
+    </tr>
+  </form>
+    {% endfor %}
+</table>
+<center>
+<button type="button"  class="btn btn-danger"> <a style="color: black;" href="{{ url_for('sepeti_temizle')}}">Sepeti Temizle</a> </button>
+</center>
+
+{%endblock %}

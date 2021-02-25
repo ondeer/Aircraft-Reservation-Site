@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{%block body%}
+    <center>
+        <br><br><br><br>
+    <h2  style=" color:moccasin; font-family: initial; font-weight: bold;">Üye Kayıt Sayfası</h2><br>
+<form action = "{{ url_for('uye_ol')}}", method = "POST">
+    <div class="container">
+        <div class="container" style="padding-left: 250px; padding-right: 250px;">
+            
+                <div class="form-group">
+                        
+                  <label for="musteriAd" style="color: orange; font-weight: bold;"> İsim Giriniz</label>
+                  <input required class="form-control form-control-xs" placeholder="İsim Giriniz" id="musteriAd" class="form-control" type = "text" name = "musteriAd" />
+                
+                </div>
+                <div class="form-group">
+                  <label for="sifre" style="color: orange; font-weight: bold;">Soyad Giriniz</label>
+                  <input required class="form-control form-control-xs" class="form-control" placeholder="Soyad Giriniz " type = "text" name = "musteriSoyad" />
+                </div>
+                <div class="form-group">
+                    <label for="sifre" style="color: orange; font-weight: bold;">Kullanıcı Adı Giriniz</label>
+                    <input required class="form-control form-control-xs" class="form-control" placeholder="Kullanıcı Adı Giriniz" type = "text" name = "kullaniciAdi" />
+                  </div>
+                  <div class="form-group">
+                    <label for="sifre" style="color: orange; font-weight: bold;">Şifre Giriniz</label>
+                    <input required class="form-control form-control-xs" class="form-control" placeholder="Şifre Giriniz " type = "password" name = "sifre" />
+                  </div>
+                <button type="submit" class="btn btn-warning">Kayıt Ol </button>
+              </form>
+            </div>
+            
+            </center>
+            {%endblock %}

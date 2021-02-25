@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Anasayfa
+{%endblock %}
+
+{%block body%}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      
+      <th scope="col">Kalkis Şehri</th>
+      <th scope="col">Varış Şehri</th>
+      <th scope="col">Firma</th>
+      <th scope="col">Uçak</th>
+      <th scope="col">Tarih</th>
+      <th scope="col">Saat</th>
+      <th scope="col">Fiyat</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    {% for ucus in ucuslar %}
+    <!--<form action = "{{ url_for('rezervasyon_yap')}}", method = "POST"></form>-->
+    <tr>
+      
+      <td style="color: white;">{{kalkisSehir}}</td>
+      <td style="color: white;">{{ varisSehir }}</td>
+      <td style="color: white;">{{ucus[2].sirketAd}}</td>
+      <td style="color: white;">{{ ucus[3].ucakModel}}</td>
+      <td style="color: white;">{{ucus[0].ucusTarih}}</td>
+      <td style="color: white;">{{ucus[0].ucusSaat}}</td>
+      <td style="color: white;">{{ucus[1].fiyat}}</td>
+      <td><a  style="color: white;" href="{{ url_for('rezervasyon_yap',ucus_id=ucus[0].ucusId)}}">    <input   style=" color: white; background-color: orange; border-radius: 10px;"  type = "submit" value = "      Bileti Al      " /></a></td>
+    </tr>
+  </form>
+    {% endfor %}
+    
+  </table>
+{%endblock %}

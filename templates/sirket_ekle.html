@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Şirket Ekleme Sayfası
+{%endblock %}
+
+{%block body%}
+
+  <center>
+    <br><br><br><br>
+<h2  style=" color:moccasin; font-family: initial; font-weight: bold;">Şirket Ekle</h2><br>
+
+<div class="container" style="padding-left: 250px; padding-right: 250px;">
+<form action = "{{ url_for('sirket_ekle')}}", method = "POST">
+    <div class="form-group">
+    <p style="font-weight: bold; color: orange;">Şirket Adı Girin:</p> <input  class="form-control form-control-xs"  required type = "text" name = "sirketAdi" /><br>
+   <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "   Şirketi Ekle    "/><br><br>
+    </div>
+ </form>
+ <center>
+{%endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Uçak Yoğunluk
+{%endblock %}
+
+{%block body%}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      
+      <th scope="col">Uçak</th>
+      <th scope="col">Uçuş Tarihi</th>
+      <th scope="col">Uçuş Saati</th>
+      <th scope="col">Yoğunluk</th>
+    </tr>
+    </thead>
+    {% for ucus in ucuslar %}
+    <tr>
+      
+      <td style="color: white;">{{ucuslar[ucus]["ucak"]}}</td>
+      <td style="color: white;">{{ucuslar[ucus]["tarih"]}}</td>
+      <td style="color: white;">{{ucuslar[ucus]["saat"]}}</td>
+      <td style="color: white;">{{ ucuslar[ucus]["yogunluk"] }}</td>
+    
+    </tr>
+    {% endfor %}
+    
+  </table>
+{%endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Admin Sayfası
+{%endblock %}
+
+
+{%block body%}
+<center>
+    <div class="row">
+        <div class="col-md-4">
+            
+                <h3 class="pt-5 " style=" color: gold; text-align: center; font-style: initial; font-size: 22px;"> Ekleme İşlemleri </h3>
+                <button type="button" class="btn btn-warning"><a style="color: black;" href="/sirket_ekle">Şirket Ekle</a></button>
+                
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/ucak_ekle">Uçak Ekle</a style="color: black;"></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/ulke_ekle">Ülke Ekle</a style="color: black;"></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/sehir_ekle">Sehir Ekle</a></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/rota_ekle">Rota Ekle</a></button>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/fiyat_ekle">Fiyat Ekle</a></button><br>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/ucus_ekle">Uçuş Ekle</a style="color: black;"></button><br>
+                    
+            
+        </div>
+        <div class="col-md-4">
+            
+                <h3 class="pt-5 " style=" color: gold; text-align: center; font-style: initial; font-size: 22px;"> Yoğunluğu Görüntüle </h3>
+                <button  type="button" class="btn btn-primary"><a style="color: black; font-weight: bold;" href="/yogunluk">   Yoğunluk   </a></button>
+
+        </div>
+        
+        
+        <div class="col-md-4">
+            
+                <h3 class="pt-5 " style=" color: gold; text-align: center; font-style: initial; font-size: 22px;"> Uçuş Güncelle ve Sil </h3>
+                <button type="button" class="btn btn-warning"><a style="color: black;"  href="/ucuslar">Uçuşlar</a style="color: black;"></button><br>
+
+        </div>
+        
+    </div>
+</center>
+
+{%endblock %}

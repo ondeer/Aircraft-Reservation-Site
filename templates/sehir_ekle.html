@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Şehir Ekleme Sayfası
+{%endblock %}
+
+{%block body%}
+<center>
+  <br><br><br><br>
+<h2  style=" color:moccasin; font-family: initial; font-weight: bold;">Şehir Ekle</h2><br>
+<div class="container" style="padding-left: 250px; padding-right: 250px;">
+<form action = "{{ url_for('sehir_ekle')}}", method = "POST">
+
+  <div class="form-group">
+                        
+    <label style="color: orange; font-weight: bold;"> Şehir Giriniz</label>
+    <input required class="form-control form-control-xs" placeholder="Şehir Adı" type = "text" name = "sehir" />
+  
+  </div>
+  <center>
+    <label style="color: orange; font-weight: bold;"> Hangi Ülkede?</label>
+    <select class="form-control" name="ulke">
+        {% for ulke in ulkeler %}
+        <option value="{{ulke.ulkeId}}">{{ulke.ulkeAd}}</option>
+        {% endfor %}
+      </select><br>
+  </center>
+      
+   <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "      Ekle     " /><br>
+ </form>
+ </center
+{%endblock %}

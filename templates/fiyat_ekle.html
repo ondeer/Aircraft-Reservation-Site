@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Fiyat Ekleme Sayfası
+{%endblock %}
+
+{%block body%}
+<center>
+  <br><br><br><br>
+<h2  style=" color:moccasin; font-family: initial; font-weight: bold;">Fiyat Ekle</h2><br>
+<div class="container" style="padding-left: 250px; padding-right: 250px;">
+<form action = "{{ url_for('fiyat_ekle')}}", method = "POST">
+
+    <center>
+  <label style="color: orange; font-weight: bold;"> Rota Seçiniz</label>
+    <select class="form-control" name="rota">
+        {% for rota in rotalar %}
+        <option value="{{rota}}">Kalkış Şehri - {{rotalar[rota]["kalkisSehri"]}} ----->  Varış Şehri - {{rotalar[rota]["varisSehri"]}}</option>
+        {% endfor %}
+      </select><br><br>
+    </center>
+
+    <center>
+    <label style="color: orange; font-weight: bold;"> Şikret-Uçak Seçiniz</label>
+      <select class="form-control" name="sirketUcak">
+        {% for sU in sirketUcak %}
+        <option value="{{sU}}">Şirket - {{sirketUcak[sU]["sirket"]}}  *****   Uçak Modeli - {{sirketUcak[sU]["ucakModel"]}}</option>
+        {% endfor %}
+      </select><br><br>
+    </center>
+    <div class="form-group">
+                        
+      <label style="color: orange; font-weight: bold;"> Fiyat Giriniz</label>
+      <input required class="form-control form-control-xs" placeholder="Fiyat Giriniz" type = "text" name = "fiyat" />
+    
+    </div><br>
+
+   <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "            Ekle           " /><br>
+ </form>
+ <center>
+{%endblock %}

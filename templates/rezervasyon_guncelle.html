@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Rezervasyon Güncelleme Sayfası
+{%endblock %}
+
+{%block body%}
+<center>
+  <br><br><br><br>
+<h2  style=" color:moccasin; font-family: initial; font-weight: bold;">Rezervasyon Güncelle</h2><br>
+<div class="container" style="padding-left: 250px; padding-right: 250px;">
+<form action = "{{ url_for('rezervasyon_guncelle')}}", method = "POST">
+  <div class="form-group">
+                        
+    <label style="color: orange; font-weight: bold;"> Bilet Sahibinin Adı </label>
+    <input required class="form-control form-control-xs" placeholder="Bilet Sahinin Adı" type = "text" name = "biletSahibiAd" />
+  
+  </div><br>
+  <div class="form-group">
+                        
+    <label style="color: orange; font-weight: bold;"> Bilet Sahibinin Soyadı </label>
+    <input required class="form-control form-control-xs" placeholder="Bilet Sahinin Soyadı" type = "text" name = "biletSahibiSoyad" />
+  
+  </div><br>
+  <div class="form-group">
+                        
+    <label style="color: orange; font-weight: bold;"> Bilet Sahibinin TC Kimlik Numarası </label>
+    <input required class="form-control form-control-xs" placeholder="Bilet Sahinin TC'si" type = "text" name = "biletSahibiTC" />
+  
+  </div><br>
+   <input  style="background-color: orange; border-radius: 10px;"   type = "submit" value = "     Güncelle     " /><br>
+  </center>
+ </form>
+{%endblock %}

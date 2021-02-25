@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Uçuş Düzenleme Sayfası
+{%endblock %}
+
+{%block body%}
+<center>
+  <br><br>
+<h2  style=" color:moccasin; font-family: initial; font-weight: bold;">Uçuş Düzenle</h2><br>
+<div class="container" style="padding-left: 250px; padding-right: 250px;">
+
+
+<form action = "{{ url_for('ucus_duzenle')}}", method = "POST">
+  
+  <center>
+    <label style="color: orange; font-weight: bold;">Rota Seçiniz</label>
+      <select class="form-control" name="secilenRota">
+        {% for rota in dictRotalar %}
+        <option value="{{rota}}">{{dictRotalar[rota]["kalkisSehir"]}}*******{{dictRotalar[rota]["varisSehir"]}}</option>
+        {% endfor %}
+      </select><br><br>
+    </center>
+    <div class="form-group">
+                        
+      <label style="color: orange; font-weight: bold;"> Fiyat Giriniz</label>
+      <input required class="form-control form-control-xs" placeholder="Fiyat Giriniz"  min="0"  type = "number" name = "girilenFiyat" />
+    
+    </div><br>
+    <center>
+      <label style="color: orange; font-weight: bold;">Şirket Seçiniz</label>
+        <select class="form-control" name="secilenSirket">
+          {% for sirket in sirketler %}
+          <option value="{{sirket.sirketId}}">{{sirket.sirketAd}}</option>
+          {% endfor %}
+        </select><br><br>
+      </center>
+      <center>
+        <label style="color: orange; font-weight: bold;">Uçak Seçiniz</label>
+          <select class="form-control" name="secilenUcak">
+            {% for ucak in ucaklar %}
+            <option value="{{ucak.ucakId}}">{{ucak.ucakModel}}</option>
+            {% endfor %}
+          </select><br><br>
+        </center>
+        <div class="form-group">
+                        
+          <label style="color: orange; font-weight: bold;"> Uçuş Saati</label>
+          <input required class="form-control form-control-xs" placeholder="Uçuş Saati"  min="0"  type = "time" name = "girilenSaat" />
+        
+        </div><br>
+        <div class="form-group">
+                        
+          <label style="color: orange; font-weight: bold;"> Uçuş Tarihi</label>
+          <input required class="form-control form-control-xs" placeholder="Uçuş Tarihi"  id="datefield"  min="0"  type = "date" name = "secilenTarih" />
+        
+        </div><br>
+  
+ <input style="background-color: orange; border-radius: 10px;"  required type = "submit" value = "     Güncelle      " /><br>
+</form>
+
+</center>
+<script>
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+  var yyyy = today.getFullYear();
+   if(dd<10){
+          dd='0'+dd
+      } 
+      if(mm<10){
+          mm='0'+mm
+      } 
+  
+  today = yyyy+'-'+mm+'-'+dd;
+  document.getElementById("datefield").setAttribute("min", today);
+  </script>
+{%endblock %}

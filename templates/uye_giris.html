@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{%block body%}
+<center>
+    <br><br><br><br>
+<h2  style=" color:moccasin; font-family: initial; font-weight: bold;">Üye Giriş</h2><br>
+
+<div class="container" style="padding-left: 250px; padding-right: 250px;">
+<form action = "{{ url_for('uye_giris')}}", method = "POST">
+    <div class="form-group">
+            
+      <label for="kullaniciAdi" style="color: orange; font-weight: bold;" > Kullanıcı Adı</label>
+      <input required class="form-control form-control-xs" placeholder="Kullanıcı Adınızı Girin" id="kullaniciAdi" class="form-control" type = "text" name = "kullaniciAdi" />
+    
+    </div>
+    <div class="form-group">
+      <label for="sifre" style="color: orange; font-weight: bold; ">Şifre</label>
+      <input required class="form-control form-control-xs" id="sifre" class="form-control" placeholder="Şifrenizi Girin " type = "password" name = "sifre" />
+    </div>
+    <button type="submit" class="btn btn-warning">Giriş Yap</button>
+  </form>
+</div>
+
+</center>
+
+
+ 
+{%endblock %}
+

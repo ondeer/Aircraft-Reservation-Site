@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{%block title%}
+        Uçak Ekleme Sayfası
+{%endblock %}
+
+{%block body%}
+<center>
+  <br><br><br><br>
+<h2  style=" color:moccasin; font-family: initial; font-weight: bold;">Uçak Ekle</h2><br>
+<div class="container" style="padding-left: 250px; padding-right: 250px;">
+<form action = "{{ url_for('ucak_ekle')}}", method = "POST">
+   
+  <div class="form-group">
+                        
+    <label style="color: orange; font-weight: bold;"> Uçak Modeli Girin</label>
+    <input required class="form-control form-control-xs" placeholder="Uçak Modeli"  class="form-control" type = "text" name = "ucakModeli" />
+  
+  </div>
+  <div class="form-group">
+                        
+    <label style="color: orange; font-weight: bold;"> Uçak Koltuk Sayısı</label>
+    <input required class="form-control form-control-xs" placeholder="Uçak Koltuk Sayısı"  class="form-control" type = "number" name = "ucakKoltukSayisi" />
+  
+  </div>
+  <center>
+    <label style="color: orange; font-weight: bold;"> Şirket Seçin</label>
+    <select class="form-control" name="sirket">
+      {% for sirket in sirketler %}
+      <option value="{{sirket.sirketId}}">{{sirket.sirketAd}}</option>
+      {% endfor %}
+    </select><br>
+  </center>
+
+   <input   style="background-color: orange; border-radius: 10px;"  type = "submit" value = "        Ekle        "><br>
+ </form>
+</center>
+{%endblock %}
